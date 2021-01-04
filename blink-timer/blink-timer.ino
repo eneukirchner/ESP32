@@ -18,13 +18,12 @@ void setup() {
   timerAlarmWrite(timer, t * 1000, true);  // alle 1 Sekunden
   timerAlarmEnable(timer);
 }
- 
+
 void loop() { 
   Serial.println("Period = " + String(t) + " ms>");
   if (Serial.available()) {
     t = Serial.parseInt();
     timerAlarmWrite(timer, t * 1000,  true);
   }
-  
   delay(1000);
 }
